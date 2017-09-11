@@ -6,7 +6,7 @@
  * @method int getCode()
  *
  */
-class Sirateck_Lemonway_Model_Apikit_Apimodels_LwError Extends Varien_Object{
+class Selectbiz_Payoh_Model_Apikit_Apimodels_LwError Extends Varien_Object{
 
 	
 	function __construct($arr = array()) {

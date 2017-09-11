@@ -1,32 +1,32 @@
 <?php
 
-class Sirateck_Lemonway_Model_Apikit_Kit{
+class Selectbiz_Payoh_Model_Apikit_Kit{
     
     public function RegisterWallet($params) {
         $res = $this->sendRequest('RegisterWallet', $params, '1.1');
         if (!isset($res->lwError)){
-            $res->wallet =  Mage::getModel('sirateck_lemonway/apikit_apimodels_wallet',array($res->lwXml->WALLET));//new Wallet($res->lwXml->WALLET);
+            $res->wallet =  Mage::getModel('selectbiz_payoh/apikit_apimodels_wallet',array($res->lwXml->WALLET));//new Wallet($res->lwXml->WALLET);
         }
         return $res;
     }
     public function MoneyIn($params) {
         $res = $this->sendRequest('MoneyIn', $params, '1.1');
         if (!isset($res->lwError)){
-            $res->operations = array(Mage::getModel('sirateck_lemonway/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));// array(new Operation($res->lwXml->TRANS->HPAY));
+            $res->operations = array(Mage::getModel('selectbiz_payoh/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));// array(new Operation($res->lwXml->TRANS->HPAY));
         }
         return $res;
     }
     public function UpdateWalletDetails($params) {
         $res = $this->sendRequest('UpdateWalletDetails', $params, '1.0');
         if (!isset($res->lwError)){
-            $res->wallet = Mage::getModel('sirateck_lemonway/apikit_apimodels_wallet',array($res->lwXml->WALLET));
+            $res->wallet = Mage::getModel('selectbiz_payoh/apikit_apimodels_wallet',array($res->lwXml->WALLET));
         }
         return $res;
     }
     public function GetWalletDetails($params) {
         $res = $this->sendRequest('GetWalletDetails', $params, '1.5');
         if (!isset($res->lwError)){
-            $res->wallet = Mage::getModel('sirateck_lemonway/apikit_apimodels_wallet',array($res->lwXml->WALLET));
+            $res->wallet = Mage::getModel('selectbiz_payoh/apikit_apimodels_wallet',array($res->lwXml->WALLET));
         }
         return $res;
     }
@@ -48,7 +48,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
     public function MoneyInWithCardId($params) {
         $res = $this->sendRequest('MoneyInWithCardId', $params, '1.1');
         if (!isset($res->lwError)){
-            $res->operations = array(Mage::getModel('sirateck_lemonway/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));
+            $res->operations = array(Mage::getModel('selectbiz_payoh/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));
         }
         return $res;
     }
@@ -58,21 +58,21 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
     public function SendPayment($params) {
         $res = $this->sendRequest('SendPayment', $params, '1.0');
         if (!isset($res->lwError)){
-            $res->operations = array(Mage::getModel('sirateck_lemonway/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));
+            $res->operations = array(Mage::getModel('selectbiz_payoh/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));
         }
         return $res;
     }
     public function RegisterIBAN($params) {
         $res = $this->sendRequest('RegisterIBAN', $params, '1.1');
         if (!isset($res->lwError)){
-            $res->iban = Mage::getModel('sirateck_lemonway/apikit_apimodels_iban',array($res->lwXml->IBAN));;//new Iban($res->lwXml->IBAN);
+            $res->iban = Mage::getModel('selectbiz_payoh/apikit_apimodels_iban',array($res->lwXml->IBAN));;//new Iban($res->lwXml->IBAN);
         }
         return $res;
     }
     public function MoneyOut($params) {
         $res = $this->sendRequest('MoneyOut', $params, '1.3');
         if (!isset($res->lwError)){
-            $res->operations = array(Mage::getModel('sirateck_lemonway/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));
+            $res->operations = array(Mage::getModel('selectbiz_payoh/apikit_apimodels_operation',array($res->lwXml->TRANS->HPAY)));
         }
         return $res;
     }
@@ -81,7 +81,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
         if (!isset($res->lwError)){
             $res->operations = array();
             foreach ($res->lwXml->TRANS->HPAY as $HPAY){
-                $res->operations[] = Mage::getModel('sirateck_lemonway/apikit_apimodels_operation',array($HPAY));
+                $res->operations[] = Mage::getModel('selectbiz_payoh/apikit_apimodels_operation',array($HPAY));
             }
         }
         return $res;
@@ -91,7 +91,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
         if (!isset($res->lwError)){
             $res->operations = array();
             foreach ($res->lwXml->TRANS->HPAY as $HPAY){
-                $res->operations[] = Mage::getModel('sirateck_lemonway/apikit_apimodels_operation',array($HPAY));
+                $res->operations[] = Mage::getModel('selectbiz_payoh/apikit_apimodels_operation',array($HPAY));
             }
         }
         return $res;
@@ -101,7 +101,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
         if (!isset($res->lwError)){
             $res->operations = array();
             foreach ($res->lwXml->TRANS->HPAY as $HPAY){
-                $res->operations[] = Mage::getModel('sirateck_lemonway/apikit_apimodels_operation',array($HPAY));
+                $res->operations[] = Mage::getModel('selectbiz_payoh/apikit_apimodels_operation',array($HPAY));
             }
         }
         return $res;
@@ -109,7 +109,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
     public function UploadFile($params) {
         $res = $this->sendRequest('UploadFile', $params, '1.1');
         if (!isset($res->lwError)){
-            $res->kycDoc = Mage::getModel('sirateck_lemonway/apikit_apimodels_kycDoc',array($res->lwXml->UPLOAD));;//new KycDoc($res->lwXml->UPLOAD);
+            $res->kycDoc = Mage::getModel('selectbiz_payoh/apikit_apimodels_kycDoc',array($res->lwXml->UPLOAD));;//new KycDoc($res->lwXml->UPLOAD);
         }
         return $res;
     }
@@ -137,7 +137,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
     public function RegisterSddMandate($params) {
         $res = $this->sendRequest('RegisterSddMandate', $params, '1.0');
         if (!isset($res->lwError)){
-            $res->sddMandate = Mage::getModel('sirateck_lemonway/apikit_apimodels_sddMandate',array($res->lwXml->SDDMANDATE));;//new SddMandate($res->lwXml->SDDMANDATE);
+            $res->sddMandate = Mage::getModel('selectbiz_payoh/apikit_apimodels_sddMandate',array($res->lwXml->SDDMANDATE));;//new SddMandate($res->lwXml->SDDMANDATE);
         }
         return $res;
     }
@@ -159,7 +159,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
      * @param string $methodName
      * @param array $params
      * @param float $version
-     * @return Sirateck_Lemonway_Model_Apikit_Apiresponse $apiResponse 
+     * @return Selectbiz_Payoh_Model_Apikit_Apiresponse $apiResponse
      */
     private function sendRequest($methodName, $params, $version){
         $ua = '';
@@ -237,7 +237,7 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
                 }
                 
                 curl_close($ch);
-                $apiResponse = Mage::getModel('sirateck_lemonway/apikit_apiresponse',array($content)); 
+                $apiResponse = Mage::getModel('selectbiz_payoh/apikit_apiresponse',array($content));
                 return $apiResponse;
                 
             case 400:
@@ -291,10 +291,10 @@ class Sirateck_Lemonway_Model_Apikit_Kit{
     }
     
     /**
-     * @return Sirateck_Lemonway_Model_Config
+     * @return Selectbiz_Payoh_Model_Config
      */
     protected function getConfig(){
-        return Mage::getSingleton('sirateck_lemonway/config');
+        return Mage::getSingleton('selectbiz_payoh/config');
     }
 }
 ?>

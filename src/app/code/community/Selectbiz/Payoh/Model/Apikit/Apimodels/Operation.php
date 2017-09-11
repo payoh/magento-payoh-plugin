@@ -16,7 +16,7 @@
  * @author kassim belghait
  *
  */
-class Sirateck_Lemonway_Model_Apikit_Apimodels_Operation extends Varien_Object {
+class Selectbiz_Payoh_Model_Apikit_Apimodels_Operation extends Varien_Object {
 
 
 	

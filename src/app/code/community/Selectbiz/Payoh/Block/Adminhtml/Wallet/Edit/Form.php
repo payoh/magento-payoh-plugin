@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,25 +9,25 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Wallet edit form
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Block_Adminhtml_Wallet_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
+class Selectbiz_Payoh_Block_Adminhtml_Wallet_Edit_Form extends Mage_Adminhtml_Block_Widget_Form
 {
     /**
      * prepare form
      *
      * @access protected
-     * @return Sirateck_Lemonway_Block_Adminhtml_Wallet_Edit_Form
+     * @return Selectbiz_Payoh_Block_Adminhtml_Wallet_Edit_Form
      * @author Kassim Belghait kassim@sirateck.com
      */
     protected function _prepareForm()

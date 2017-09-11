@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,19 +9,19 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Wallet admin block
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Block_Adminhtml_Moneyout extends Mage_Adminhtml_Block_Template
+class Selectbiz_Payoh_Block_Adminhtml_Moneyout extends Mage_Adminhtml_Block_Template
 {
 	protected $_walletDetails = null;
 	
@@ -30,7 +30,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Moneyout extends Mage_Adminhtml_Block_Te
 		$this->setChild(
 				'submit_button',
 				$this->getLayout()->createBlock('adminhtml/widget_button')->setData(array(
-						'label'     => Mage::helper('sirateck_lemonway')->__('Pay'),
+						'label'     => Mage::helper('selectbiz_payoh')->__('Pay'),
 						'class'     => 'save submit-button',
 						'onclick'   => 'moneyoutForm.submit()',
 				))
@@ -84,17 +84,17 @@ class Sirateck_Lemonway_Block_Adminhtml_Moneyout extends Mage_Adminhtml_Block_Te
 
 	
 	/**
-	 * @return Sirateck_Lemonway_Model_Apikit_Apiresponse
+	 * @return Selectbiz_Payoh_Model_Apikit_Apiresponse
 	 */
 	public function getWalletDetails(){
 		if(is_null($this->_walletDetails))
 		{
-			/* @var $_helper Sirateck_Lemonway_Helper_Data */
-			$_helper = $this->helper('sirateck_lemonway');
+			/* @var $_helper Selectbiz_Payoh_Helper_Data */
+			$_helper = $this->helper('selectbiz_payoh');
 			$params = array("wallet"=>$_helper->getConfig()->getWalletMerchantId()
 			);
 			
-			$this->_walletDetails = Mage::getSingleton('sirateck_lemonway/apikit_kit')->GetWalletDetails($params);
+			$this->_walletDetails = Mage::getSingleton('selectbiz_payoh/apikit_kit')->GetWalletDetails($params);
 			
 		}
 		

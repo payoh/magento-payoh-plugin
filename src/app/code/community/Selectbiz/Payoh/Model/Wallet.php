@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,33 +9,33 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Wallet model
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Model_Wallet extends Mage_Core_Model_Abstract
+class Selectbiz_Payoh_Model_Wallet extends Mage_Core_Model_Abstract
 {
     /**
      * Entity code.
      * Can be used as part of method name for entity processing
      */
-    const ENTITY    = 'sirateck_lemonway_wallet';
-    const CACHE_TAG = 'sirateck_lemonway_wallet';
+    const ENTITY    = 'selectbiz_payoh_wallet';
+    const CACHE_TAG = 'selectbiz_payoh_wallet';
 
     /**
      * Prefix of model events names
      *
      * @var string
      */
-    protected $_eventPrefix = 'sirateck_lemonway_wallet';
+    protected $_eventPrefix = 'selectbiz_payoh_wallet';
 
     /**
      * Parameter name in event
@@ -77,14 +77,14 @@ class Sirateck_Lemonway_Model_Wallet extends Mage_Core_Model_Abstract
     public function _construct()
     {
         parent::_construct();
-        $this->_init('sirateck_lemonway/wallet');
+        $this->_init('selectbiz_payoh/wallet');
     }
 
     /**
      * before save wallet
      *
      * @access protected
-     * @return Sirateck_Lemonway_Model_Wallet
+     * @return Selectbiz_Payoh_Model_Wallet
      * @author Kassim Belghait kassim@sirateck.com
      */
     protected function _beforeSave()
@@ -102,7 +102,7 @@ class Sirateck_Lemonway_Model_Wallet extends Mage_Core_Model_Abstract
      * save wallet relation
      *
      * @access public
-     * @return Sirateck_Lemonway_Model_Wallet
+     * @return Selectbiz_Payoh_Model_Wallet
      * @author Kassim Belghait kassim@sirateck.com
      */
     protected function _afterSave()

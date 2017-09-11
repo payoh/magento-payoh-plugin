@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,19 +9,19 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Lemonway default helper
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Helper_Data extends Mage_Core_Helper_Abstract
+class Selectbiz_Payoh_Helper_Data extends Mage_Core_Helper_Abstract
 {
     /**
      * convert array to options
@@ -70,10 +70,10 @@ class Sirateck_Lemonway_Helper_Data extends Mage_Core_Helper_Abstract
     }
     
     /**
-     * @return Sirateck_Lemonway_Model_Config
+     * @return Selectbiz_Payoh_Model_Config
      */
     public function getConfig(){
-    	return Mage::getSingleton('sirateck_lemonway/config');
+    	return Mage::getSingleton('selectbiz_payoh/config');
     }
     
     /**

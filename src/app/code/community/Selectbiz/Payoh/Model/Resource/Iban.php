@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,19 +9,19 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Iban resource model
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Model_Resource_Iban extends Mage_Core_Model_Resource_Db_Abstract
+class Selectbiz_Payoh_Model_Resource_Iban extends Mage_Core_Model_Resource_Db_Abstract
 {
 
     /**
@@ -32,6 +32,6 @@ class Sirateck_Lemonway_Model_Resource_Iban extends Mage_Core_Model_Resource_Db_
      */
     public function _construct()
     {
-        $this->_init('sirateck_lemonway/iban', 'iban_id');
+        $this->_init('selectbiz_payoh/iban', 'iban_id');
     }
 }

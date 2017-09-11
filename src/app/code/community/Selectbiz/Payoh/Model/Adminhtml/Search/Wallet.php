@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,25 +9,25 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Admin search model
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Model_Adminhtml_Search_Wallet extends Varien_Object
+class Selectbiz_Payoh_Model_Adminhtml_Search_Wallet extends Varien_Object
 {
     /**
      * Load search results
      *
      * @access public
-     * @return Sirateck_Lemonway_Model_Adminhtml_Search_Wallet
+     * @return Selectbiz_Payoh_Model_Adminhtml_Search_Wallet
      * @author Kassim Belghait kassim@sirateck.com
      */
     public function load()
@@ -37,7 +37,7 @@ class Sirateck_Lemonway_Model_Adminhtml_Search_Wallet extends Varien_Object
             $this->setResults($arr);
             return $this;
         }
-        $collection = Mage::getResourceModel('sirateck_lemonway/wallet_collection')
+        $collection = Mage::getResourceModel('selectbiz_payoh/wallet_collection')
             ->addFieldToFilter('wallet_id', array('like' => $this->getQuery().'%'))
             ->setCurPage($this->getStart())
             ->setPageSize($this->getLimit())
@@ -45,7 +45,7 @@ class Sirateck_Lemonway_Model_Adminhtml_Search_Wallet extends Varien_Object
         foreach ($collection->getItems() as $wallet) {
             $arr[] = array(
                 'id'          => 'wallet/1/'.$wallet->getId(),
-                'type'        => Mage::helper('sirateck_lemonway')->__('Wallet'),
+                'type'        => Mage::helper('selectbiz_payoh')->__('Wallet'),
                 'name'        => $wallet->getWalletId(),
                 'description' => $wallet->getWalletId(),
                 'url' => Mage::helper('adminhtml')->getUrl(

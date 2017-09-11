@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<sections>
-		<sirateck_lemonway translate="label" module="sirateck_lemonway">
+		<selectbiz_payoh translate="label" module="selectbiz_payoh">
 			<label>Lemonway payment</label>
             <tab>sales</tab>
             <frontend_type>text</frontend_type>
@@ -103,10 +103,10 @@
                     </fields>
    				</lemonway_api>
    			</groups>
-		</sirateck_lemonway>
+		</selectbiz_payoh>
 		<payment>
             <groups>
-            	<lemonway_webkit translate="label" module="sirateck_lemonway">
+            	<lemonway_webkit translate="label" module="selectbiz_payoh">
             		<label>Lemonway payment method (webkit)</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>200</sort_order>

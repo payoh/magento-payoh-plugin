@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,19 +9,19 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Wallet admin controller
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Adminhtml_Lemonway_MoneyoutController extends Sirateck_Lemonway_Controller_Adminhtml_Lemonway
+class Selectbiz_Payoh_Adminhtml_Lemonway_MoneyoutController extends Selectbiz_Payoh_Controller_Adminhtml_Lemonway
 {
 
 
@@ -35,8 +35,8 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_MoneyoutController extends Sirateck_L
     public function payAction()
     {
         $this->loadLayout();
-        $this->_title(Mage::helper('sirateck_lemonway')->__('Lemonway'))
-             ->_title(Mage::helper('sirateck_lemonway')->__('MoneyOut'));
+        $this->_title(Mage::helper('selectbiz_payoh')->__('Lemonway'))
+             ->_title(Mage::helper('selectbiz_payoh')->__('MoneyOut'));
         $this->renderLayout();
     }
     
@@ -78,8 +78,8 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_MoneyoutController extends Sirateck_L
                             "autoCommission" => 0,
                     );
                     //Init APi kit
-                    /* @var $kit Sirateck_Lemonway_Model_Apikit_Kit */
-                    $kit = Mage::getSingleton('sirateck_lemonway/apikit_kit');
+                    /* @var $kit Selectbiz_Payoh_Model_Apikit_Kit */
+                    $kit = Mage::getSingleton('selectbiz_payoh/apikit_kit');
                     $apiResponse = $kit->MoneyOut($params);
                     
                     if($apiResponse->lwError)
@@ -87,7 +87,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_MoneyoutController extends Sirateck_L
                     
                     if(count($apiResponse->operations))
                     {
-                        /* @var $op Sirateck_Lemonway_Model_Apikit_Apimodels_Operation */
+                        /* @var $op Selectbiz_Payoh_Model_Apikit_Apimodels_Operation */
                         $op = $apiResponse->operations[0];
                         if($op->getHpayId())
                         {
@@ -121,14 +121,14 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_MoneyoutController extends Sirateck_L
      */
     protected function _isAllowed()
     {
-        return Mage::getSingleton('admin/session')->isAllowed('sales/sirateck_lemonway/moneyout');
+        return Mage::getSingleton('admin/session')->isAllowed('sales/selectbiz_payoh/moneyout');
     }
     
     /**
      * 
-     * @return Sirateck_Lemonway_Model_Method_Webkit
+     * @return Selectbiz_Payoh_Model_Method_Webkit
      */
     protected function getMethodInstance(){
-        return MAge::getSingleton('sirateck_lemonway/method_webkit');
+        return MAge::getSingleton('selectbiz_payoh/method_webkit');
     }
 }

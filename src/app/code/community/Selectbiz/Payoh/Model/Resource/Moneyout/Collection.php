@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,19 +9,19 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Moneyout collection resource model
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Model_Resource_Moneyout_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
+class Selectbiz_Payoh_Model_Resource_Moneyout_Collection extends Mage_Core_Model_Resource_Db_Collection_Abstract
 {
     protected $_joinedFields = array();
 
@@ -35,7 +35,7 @@ class Sirateck_Lemonway_Model_Resource_Moneyout_Collection extends Mage_Core_Mod
     protected function _construct()
     {
         parent::_construct();
-        $this->_init('sirateck_lemonway/moneyout');
+        $this->_init('selectbiz_payoh/moneyout');
     }
 
     /**

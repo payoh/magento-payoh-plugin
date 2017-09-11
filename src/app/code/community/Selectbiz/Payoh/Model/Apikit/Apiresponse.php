@@ -1,11 +1,11 @@
 <?php
-class Sirateck_Lemonway_Model_Apikit_Apiresponse{
+class Selectbiz_Payoh_Model_Apikit_Apiresponse{
 	
 	function __construct($xmlResponseArr) {
 		$xmlResponse = $xmlResponseArr[0];
 		$this->lwXml = $xmlResponse;
 		if (isset($xmlResponse->E)){
-			$this->lwError = Mage::getModel("sirateck_lemonway/apikit_apimodels_lwError",array($xmlResponse->E->Code, $xmlResponse->E->Msg));
+			$this->lwError = Mage::getModel("selectbiz_payoh/apikit_apimodels_lwError",array($xmlResponse->E->Code, $xmlResponse->E->Msg));
 		}
     }
 	
@@ -17,37 +17,37 @@ class Sirateck_Lemonway_Model_Apikit_Apiresponse{
 	
 	/**
      * lwError
-     * @var Sirateck_Lemonway_Model_Apikit_Apimodels_LwError
+     * @var Selectbiz_Payoh_Model_Apikit_Apimodels_LwError
      */
     public $lwError;
 	
 	/**
      * wallet
-     * @var Sirateck_Lemonway_Model_Apikit_Apimodels_Wallet
+     * @var Selectbiz_Payoh_Model_Apikit_Apimodels_Wallet
      */
     public $wallet;
 	
 	/**
      * operations
-     * @var array Sirateck_Lemonway_Model_Apikit_Apimodels_Operation
+     * @var array Selectbiz_Payoh_Model_Apikit_Apimodels_Operation
      */
     public $operations;
 	
 	/**
      * kycDoc
-     * @var Sirateck_Lemonway_Model_Apikit_Apimodels_KycDoc
+     * @var Selectbiz_Payoh_Model_Apikit_Apimodels_KycDoc
      */
     public $kycDoc;
 	
 	/**
      * iban
-     * @var Sirateck_Lemonway_Model_Apikit_Apimodels_Iban
+     * @var Selectbiz_Payoh_Model_Apikit_Apimodels_Iban
      */
     public $iban;
 	
 	/**
      * sddMandate
-     * @var Sirateck_Lemonway_Model_Apikit_Apimodels_SddMandate
+     * @var Selectbiz_Payoh_Model_Apikit_Apimodels_SddMandate
      */
     public $sddMandate;
 }

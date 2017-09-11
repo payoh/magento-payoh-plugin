@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -10,102 +10,102 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
  -->
 <config>
     <modules>
-        <Sirateck_Lemonway>
+        <Selectbiz_Payoh>
             <version>1.2.0</version>
-        </Sirateck_Lemonway>
+        </Selectbiz_Payoh>
     </modules>
     <global>
         <resources>
-            <sirateck_lemonway_setup>
+            <selectbiz_payoh_setup>
                 <setup>
-                    <module>Sirateck_Lemonway</module>
-                    <class>Sirateck_Lemonway_Model_Resource_Setup</class>
+                    <module>Selectbiz_Payoh</module>
+                    <class>Selectbiz_Payoh_Model_Resource_Setup</class>
                 </setup>
-            </sirateck_lemonway_setup>
+            </selectbiz_payoh_setup>
         </resources>
         <blocks>
-            <sirateck_lemonway>
-                <class>Sirateck_Lemonway_Block</class>
-            </sirateck_lemonway>
+            <selectbiz_payoh>
+                <class>Selectbiz_Payoh_Block</class>
+            </selectbiz_payoh>
         </blocks>
         <helpers>
-            <sirateck_lemonway>
-                <class>Sirateck_Lemonway_Helper</class>
-            </sirateck_lemonway>
+            <selectbiz_payoh>
+                <class>Selectbiz_Payoh_Helper</class>
+            </selectbiz_payoh>
         </helpers>
         <models>
-            <sirateck_lemonway>
-                <class>Sirateck_Lemonway_Model</class>
-                <resourceModel>sirateck_lemonway_resource</resourceModel>
-            </sirateck_lemonway>
-            <sirateck_lemonway_resource>
-                <class>Sirateck_Lemonway_Model_Resource</class>
+            <selectbiz_payoh>
+                <class>Selectbiz_Payoh_Model</class>
+                <resourceModel>selectbiz_payoh_resource</resourceModel>
+            </selectbiz_payoh>
+            <selectbiz_payoh_resource>
+                <class>Selectbiz_Payoh_Model_Resource</class>
                 <entities>
                     <wallet>
-                        <table>sirateck_lemonway_wallet</table>
+                        <table>selectbiz_payoh_wallet</table>
                     </wallet>
                     <iban>
-                        <table>sirateck_lemonway_iban</table>
+                        <table>selectbiz_payoh_iban</table>
                     </iban>
                     <moneyout>
-                        <table>sirateck_lemonway_moneyout</table>
+                        <table>selectbiz_payoh_moneyout</table>
                     </moneyout>
                 </entities>
-            </sirateck_lemonway_resource>
+            </selectbiz_payoh_resource>
         </models>
     </global>
     <frontend>
 		<secure_url>
-            <sirateck_lemonway>/lemonway/payment</sirateck_lemonway>
+            <selectbiz_payoh>/lemonway/payment</selectbiz_payoh>
         </secure_url>
         <routers>
-            <sirateck_lemonway>
+            <selectbiz_payoh>
                 <use>standard</use>
                 <args>
-                    <module>Sirateck_Lemonway</module>
+                    <module>Selectbiz_Payoh</module>
                     <frontName>lemonway</frontName>
                 </args>
-            </sirateck_lemonway>
+            </selectbiz_payoh>
         </routers>
 		<translate>
             <modules>
-                <Sirateck_Lemonway>
+                <Selectbiz_Payoh>
                     <files>
-                        <default>Sirateck_Lemonway.csv</default>
+                        <default>Selectbiz_Payoh.csv</default>
                     </files>
-                </Sirateck_Lemonway>
+                </Selectbiz_Payoh>
             </modules>
         </translate>
 	</frontend>
     <adminhtml>
         <layout>
             <updates>
-                <sirateck_lemonway>
-                    <file>sirateck_lemonway.xml</file>
-                </sirateck_lemonway>
+                <selectbiz_payoh>
+                    <file>selectbiz_payoh.xml</file>
+                </selectbiz_payoh>
             </updates>
         </layout>
         <translate>
             <modules>
-                <Sirateck_Lemonway>
+                <Selectbiz_Payoh>
                     <files>
-                        <default>Sirateck_Lemonway.csv</default>
+                        <default>Selectbiz_Payoh.csv</default>
                     </files>
-                </Sirateck_Lemonway>
+                </Selectbiz_Payoh>
             </modules>
         </translate>
         <global_search>
             <wallet>
-                <class>sirateck_lemonway/adminhtml_search_wallet</class>
-                <acl>sirateck_lemonway</acl>
+                <class>selectbiz_payoh/adminhtml_search_wallet</class>
+                <acl>selectbiz_payoh</acl>
             </wallet>
         </global_search>
     </adminhtml>
@@ -114,7 +114,7 @@
             <adminhtml>
                 <args>
                     <modules>
-                        <Sirateck_Lemonway before="Mage_Adminhtml">Sirateck_Lemonway_Adminhtml</Sirateck_Lemonway>
+                        <Selectbiz_Payoh before="Mage_Adminhtml">Selectbiz_Payoh_Adminhtml</Selectbiz_Payoh>
                     </modules>
                 </args>
             </adminhtml>
@@ -124,12 +124,12 @@
 		<jobs>
 			<clean_orders_lw_in_pending>
 				<schedule><cron_expr>*/15 * * * *</cron_expr></schedule>
-				<run><model>sirateck_lemonway/observer::cancelOrdersInPending</model></run>
+				<run><model>selectbiz_payoh/observer::cancelOrdersInPending</model></run>
 			</clean_orders_lw_in_pending>
 		</jobs>
 	</crontab>
     <default>
-		<sirateck_lemonway>
+		<selectbiz_payoh>
 			<lemonway_api>			
 				<api_pass backend_model="adminhtml/system_config_backend_encrypted"/>
 				<directkit_url></directkit_url>
@@ -138,7 +138,7 @@
 				<webkit_url_test></webkit_url_test>
 				<is_test_mode>0</is_test_mode>
 			</lemonway_api>
-		</sirateck_lemonway>
+		</selectbiz_payoh>
 		<payment>
 			<lemonway_webkit>
 				<active>0</active>
@@ -151,7 +151,7 @@
 				<payment_action>initialize</payment_action>
 				<allowspecific>0</allowspecific>
 				<debug>0</debug>
-				<model>sirateck_lemonway/method_webkit</model>
+				<model>selectbiz_payoh/method_webkit</model>
 				<return_url>lemonway/payment/return</return_url>
 				<cancel_url>lemonway/payment/cancel</cancel_url>
 				<error_url>lemonway/payment/error</error_url>	

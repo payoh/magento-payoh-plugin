@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  *
  * NOTICE OF LICENSE
  *
@@ -9,24 +9,24 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  *
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Method  standard model
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
- class Sirateck_Lemonway_Model_Method_Webkit extends Mage_Payment_Model_Method_Abstract{
+ class Selectbiz_Payoh_Model_Method_Webkit extends Mage_Payment_Model_Method_Abstract{
 
 
     protected $_code  = 'lemonway_webkit';
-    protected $_formBlockType = 'sirateck_lemonway/form_webkit';
-    protected $_infoBlockType = 'sirateck_lemonway/info_webkit';
+    protected $_formBlockType = 'selectbiz_payoh/form_webkit';
+    protected $_infoBlockType = 'selectbiz_payoh/info_webkit';
 
     /**
      * Availability options
@@ -99,21 +99,21 @@
         $registerCard = (bool)$this->getInfoInstance()->getAdditionalInformation('register_card');
         
         //Init APi kit
-        /* @var $kit Sirateck_Lemonway_Model_Apikit_Kit */
-        $kit = Mage::getSingleton('sirateck_lemonway/apikit_kit');
+        /* @var $kit Selectbiz_Payoh_Model_Apikit_Kit */
+        $kit = Mage::getSingleton('selectbiz_payoh/apikit_kit');
         
         $amountCom = 0;
-        /*if(!Mage::helper('core')->isModuleEnabled('Sirateck_Lemonwaymkt')){
+        /*if(!Mage::helper('core')->isModuleEnabled('Selectbiz_Payohmkt')){
             $amountCom = $this->getOrder()->getBaseGrandTotal();
         }
         else{
             $seller_totals = Mage::helper('lemonwaymkt')->getOrderCommissionDetails($this->getOrder());
-            if($seller_totals->getTotalSellerAmount() > 0 && !Mage::getStoreConfigFlag('sirateck_lemonway/lemonwaymkt/include_shipping')){
+            if($seller_totals->getTotalSellerAmount() > 0 && !Mage::getStoreConfigFlag('selectbiz_payoh/lemonwaymkt/include_shipping')){
                 $amountCom = $this->getOrder()->getBaseGrandTotal() - ($seller_totals->getTotalSellerAmount() + $seller_totals->getTotalCommision());
             }
         }*/
         
-        $comment = Mage::helper('sirateck_lemonway')->__(
+        $comment = Mage::helper('selectbiz_payoh')->__(
             "%s - Order #%s by %s %s %s",
             Mage::app()->getStore()->getName(),
             $this->getOrder()->getIncrementId(),
@@ -181,7 +181,7 @@
                         'wallet' => $this->getHelper()->getConfig()->getWalletMerchantId(),
                         'amountTot' => sprintf("%.2f" ,(float)$this->getOrder()->getBaseGrandTotal()),
                         'amountCom' => sprintf("%.2f" ,(float)$amountCom),
-                        'message' => $comment . " -- "  .Mage::helper('sirateck_lemonway')->__('Oneclic mode (card id: %s)', $cardId),
+                        'message' => $comment . " -- "  .Mage::helper('selectbiz_payoh')->__('Oneclic mode (card id: %s)', $cardId),
                         'autoCommission' => 1,
                         'cardId' => $cardId, 
                         'isPreAuth' => 0, 
@@ -197,7 +197,7 @@
                     Mage::throwException("Error code: " . $res->lwError->getCode() . " Message: " . $res->lwError->getMessage());
                 }
                 
-                /* @var $op Sirateck_Lemonway_Model_Apikit_Apimodels_Operation */
+                /* @var $op Selectbiz_Payoh_Model_Apikit_Apimodels_Operation */
                 foreach ($res->operations as $op) {
                     if($op->getStatus() == "3")
                     {
@@ -216,7 +216,7 @@
                 
             }
             else{
-                Mage::throwException(Mage::helper('sirateck_lemonway')->__("Customer not found!"));
+                Mage::throwException(Mage::helper('selectbiz_payoh')->__("Customer not found!"));
             }
         }
 
@@ -286,10 +286,10 @@
     }
     
     /**
-     * @return Sirateck_Lemonway_Helper_Data
+     * @return Selectbiz_Payoh_Helper_Data
      */
     public function getHelper(){
-        return Mage::helper('sirateck_lemonway');
+        return Mage::helper('selectbiz_payoh');
     }
 
     /*

@@ -1,6 +1,6 @@
 <?php
 
-class Sirateck_Lemonway_Model_Observer {
+class Selectbiz_Payoh_Model_Observer {
 	
 	
 	/**
@@ -35,7 +35,7 @@ class Sirateck_Lemonway_Model_Observer {
 						$order->cancel();
 						$order
 						->addStatusToHistory($order->getStatus(),// keep order status/state
-								Mage::helper('sirateck_lemonway')->__("Order canceled automatically by cron because order is pending since %d minutes",$limitedTime));
+								Mage::helper('selectbiz_payoh')->__("Order canceled automatically by cron because order is pending since %d minutes",$limitedTime));
 	
 						$order->save();
 	

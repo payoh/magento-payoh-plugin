@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  *
  * NOTICE OF LICENSE
  *
@@ -9,8 +9,8 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  *
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
@@ -18,16 +18,16 @@
 /**
  * Main Controller
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_PaymentController extends Mage_Core_Controller_Front_Action {
+class Selectbiz_Payoh_PaymentController extends Mage_Core_Controller_Front_Action {
     
     protected $_order = null;
     /**
      * 
-     * @var Sirateck_Lemonway_Model_Apikit_Apimodels_Operation
+     * @var Selectbiz_Payoh_Model_Apikit_Apimodels_Operation
      */
     protected $_moneyin_trans_details = null;
     
@@ -58,7 +58,7 @@ class Sirateck_Lemonway_PaymentController extends Mage_Core_Controller_Front_Act
     
     /**
      * Call api to get transaction detail for this transaction
-     * @return Sirateck_Lemonway_Model_Apikit_Apimodels_Operation
+     * @return Selectbiz_Payoh_Model_Apikit_Apimodels_Operation
      */
     protected function getMoneyInTransDetails()
     {
@@ -67,8 +67,8 @@ class Sirateck_Lemonway_PaymentController extends Mage_Core_Controller_Front_Act
             //call directkit to get Webkit Token
             $params = array('transactionMerchantToken'=>$this->_getOrder()->getIncrementId());
             //Init APi kit
-            /* @var $kit Sirateck_Lemonway_Model_Apikit_Kit */
-            $kit = Mage::getSingleton('sirateck_lemonway/apikit_kit');
+            /* @var $kit Selectbiz_Payoh_Model_Apikit_Kit */
+            $kit = Mage::getSingleton('selectbiz_payoh/apikit_kit');
             $res = $kit->GetMoneyInTransDetails($params);
             
             if (isset($res->lwError)){
@@ -166,7 +166,7 @@ class Sirateck_Lemonway_PaymentController extends Mage_Core_Controller_Front_Act
         if($this->getRequest()->isGet())
         {
             $successUrl = 'checkout/onepage/success';
-            if(Mage::helper('sirateck_lemonway')->oneStepCheckoutInstalled()){
+            if(Mage::helper('selectbiz_payoh')->oneStepCheckoutInstalled()){
                 $successUrl = 'onestepcheckout/index/success';
             }
             $this->_redirect($successUrl);
@@ -194,7 +194,7 @@ class Sirateck_Lemonway_PaymentController extends Mage_Core_Controller_Front_Act
                     $order->sendNewOrderEmail();
                 }
                 
-                $methodInstance = Mage::getSingleton('sirateck_lemonway/method_webkit');
+                $methodInstance = Mage::getSingleton('selectbiz_payoh/method_webkit');
                 if (!$status = $methodInstance->getConfigData('order_status_success')) {
                     $status = $order->getStatus();
                 }
@@ -249,7 +249,7 @@ class Sirateck_Lemonway_PaymentController extends Mage_Core_Controller_Front_Act
             $order->save();
             
             //Reload products in cart
-            Mage::helper('sirateck_lemonway')->reAddToCart($order->getIncrementId());
+            Mage::helper('selectbiz_payoh')->reAddToCart($order->getIncrementId());
             
             $this->_getCheckout()->addSuccess($this->__('Your order is canceled.'));
             

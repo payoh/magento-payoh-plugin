@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -10,8 +10,8 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
@@ -25,24 +25,24 @@
                         <children>
                             <config>
                                 <children>
-                                    <sirateck_lemonway translate="title" module="sirateck_lemonway">
+                                    <selectbiz_payoh translate="title" module="selectbiz_payoh">
                                         <title>Lemonway</title>
-                                    </sirateck_lemonway>
+                                    </selectbiz_payoh>
                                 </children>
                             </config>
                         </children>
                     </system>
                     <sales>
                         <children>
-                            <sirateck_lemonway translate="title" module="sirateck_lemonway">
+                            <selectbiz_payoh translate="title" module="selectbiz_payoh">
                                 <title>LW</title>
                                 <children>
-                                   <moneyout translate="title" module="sirateck_lemonway">
+                                   <moneyout translate="title" module="selectbiz_payoh">
                                         <title>Moneyout</title>
                                         <sort_order>300</sort_order>
                                     </moneyout>
                                 </children>
-                            </sirateck_lemonway>
+                            </selectbiz_payoh>
                         </children>
                     </sales>
                 </children>
@@ -52,17 +52,17 @@
       <menu>
         <sales>
             <children>
-                <sirateck_lemonway translate="title" module="sirateck_lemonway">
+                <selectbiz_payoh translate="title" module="selectbiz_payoh">
                     <title>Lemonway</title>
                     <sort_order>5</sort_order>
                     <children>
-                        <moneyout translate="title" module="sirateck_lemonway">
+                        <moneyout translate="title" module="selectbiz_payoh">
                             <title>MoneyOut</title>
                             <action>adminhtml/lemonway_moneyout/pay</action>
                             <sort_order>300</sort_order>
                         </moneyout>
                     </children>
-                </sirateck_lemonway>            
+                </selectbiz_payoh>
              </children>
         </sales>
     </menu>

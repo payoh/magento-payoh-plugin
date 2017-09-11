@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,20 +9,20 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Lemonway module install script
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
 $this->startSetup();
-$sql[] = "CREATE TABLE IF NOT EXISTS {$this->getTable('sirateck_lemonway_moneyout')} (
+$sql[] = "CREATE TABLE IF NOT EXISTS {$this->getTable('selectbiz_payoh_moneyout')} (
     `moneyout_id` int(11) NOT NULL AUTO_INCREMENT,
 	`wallet_id` varchar(255) NOT NULL,
 	`customer_id` int(11) NOT NULL DEFAULT 0,
@@ -37,7 +37,7 @@ $sql[] = "CREATE TABLE IF NOT EXISTS {$this->getTable('sirateck_lemonway_moneyou
     PRIMARY KEY  (`moneyout_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
-$sql[] = "CREATE TABLE IF NOT EXISTS {$this->getTable('sirateck_lemonway_iban')} (
+$sql[] = "CREATE TABLE IF NOT EXISTS {$this->getTable('selectbiz_payoh_iban')} (
     `iban_id` int(11) NOT NULL AUTO_INCREMENT,
 	`lw_iban_id` int(11) NOT NULL,
 	`customer_id` int(11) NOT NULL,

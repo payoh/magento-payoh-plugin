@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,19 +9,19 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Admin source model for Payer or beneficiary
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Model_Wallet_Attribute_Source_Payerorbeneficiary extends Mage_Eav_Model_Entity_Attribute_Source_Table
+class Selectbiz_Payoh_Model_Wallet_Attribute_Source_Payerorbeneficiary extends Mage_Eav_Model_Entity_Attribute_Source_Table
 {
     /**
      * get possible values
@@ -36,15 +36,15 @@ class Sirateck_Lemonway_Model_Wallet_Attribute_Source_Payerorbeneficiary extends
     {
         $options =  array(
             array(
-                'label' => Mage::helper('sirateck_lemonway')->__('Unknow state'),
+                'label' => Mage::helper('selectbiz_payoh')->__('Unknow state'),
                 'value' => 1
             ),
             array(
-                'label' => Mage::helper('sirateck_lemonway')->__('Payer'),
+                'label' => Mage::helper('selectbiz_payoh')->__('Payer'),
                 'value' => 2
             ),
             array(
-                'label' => Mage::helper('sirateck_lemonway')->__('Beneficiary'),
+                'label' => Mage::helper('selectbiz_payoh')->__('Beneficiary'),
                 'value' => 3
             ),
         );

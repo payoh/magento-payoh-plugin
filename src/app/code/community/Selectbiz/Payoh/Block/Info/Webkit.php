@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  *
  * NOTICE OF LICENSE
  *
@@ -9,8 +9,8 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  *
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
@@ -20,7 +20,7 @@
  * 
  * @author Kassim Belghait <kassim@sirateck.com>
  */
-class Sirateck_Lemonway_Block_Info_Webkit extends Mage_Payment_Block_Info
+class Selectbiz_Payoh_Block_Info_Webkit extends Mage_Payment_Block_Info
 {
 
 

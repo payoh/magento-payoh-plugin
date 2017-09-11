@@ -5,7 +5,7 @@
  * @method string getIban() iban number
  * @method string getSwift() BIC or swift code
  */
-class Sirateck_Lemonway_Model_Apikit_Apimodels_Iban extends Varien_Object{
+class Selectbiz_Payoh_Model_Apikit_Apimodels_Iban extends Varien_Object{
 	
 	function __construct($nodeArr=array()) {
 		if(count($nodeArr))

@@ -1,6 +1,6 @@
 <?php
 
-class Sirateck_Lemonway_Model_Apikit_Apimodels_SddMandate{
+class Selectbiz_Payoh_Model_Apikit_Apimodels_SddMandate{
 
 	/**
      * ID as defined by Lemon Way

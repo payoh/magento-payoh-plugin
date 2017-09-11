@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,30 +9,30 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Wallet admin controller
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lemonway_Controller_Adminhtml_Lemonway
+class Selectbiz_Payoh_Adminhtml_Lemonway_WalletController extends Selectbiz_Payoh_Controller_Adminhtml_Lemonway
 {
     /**
      * init the wallet
      *
      * @access protected
-     * @return Sirateck_Lemonway_Model_Wallet
+     * @return Selectbiz_Payoh_Model_Wallet
      */
     protected function _initWallet()
     {
         $walletId  = (int) $this->getRequest()->getParam('id');
-        $wallet    = Mage::getModel('sirateck_lemonway/wallet');
+        $wallet    = Mage::getModel('selectbiz_payoh/wallet');
         if ($walletId) {
             $wallet->load($walletId);
         }
@@ -50,8 +50,8 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
     public function indexAction()
     {
         $this->loadLayout();
-        $this->_title(Mage::helper('sirateck_lemonway')->__('LW'))
-             ->_title(Mage::helper('sirateck_lemonway')->__('Wallets'));
+        $this->_title(Mage::helper('selectbiz_payoh')->__('LW'))
+             ->_title(Mage::helper('selectbiz_payoh')->__('Wallets'));
         $this->renderLayout();
     }
 
@@ -80,7 +80,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $wallet      = $this->_initWallet();
         if ($walletId && !$wallet->getId()) {
             $this->_getSession()->addError(
-                Mage::helper('sirateck_lemonway')->__('This wallet no longer exists.')
+                Mage::helper('selectbiz_payoh')->__('This wallet no longer exists.')
             );
             $this->_redirect('*/*/');
             return;
@@ -91,12 +91,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         }
         Mage::register('wallet_data', $wallet);
         $this->loadLayout();
-        $this->_title(Mage::helper('sirateck_lemonway')->__('LW'))
-             ->_title(Mage::helper('sirateck_lemonway')->__('Wallets'));
+        $this->_title(Mage::helper('selectbiz_payoh')->__('LW'))
+             ->_title(Mage::helper('selectbiz_payoh')->__('Wallets'));
         if ($wallet->getId()) {
             $this->_title($wallet->getWalletId());
         } else {
-            $this->_title(Mage::helper('sirateck_lemonway')->__('Add wallet'));
+            $this->_title(Mage::helper('selectbiz_payoh')->__('Add wallet'));
         }
         if (Mage::getSingleton('cms/wysiwyg_config')->isEnabled()) {
             $this->getLayout()->getBlock('head')->setCanLoadTinyMce(true);
@@ -132,7 +132,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 $wallet->addData($data);
                 $wallet->save();
                 Mage::getSingleton('adminhtml/session')->addSuccess(
-                    Mage::helper('sirateck_lemonway')->__('Wallet was successfully saved')
+                    Mage::helper('selectbiz_payoh')->__('Wallet was successfully saved')
                 );
                 Mage::getSingleton('adminhtml/session')->setFormData(false);
                 if ($this->getRequest()->getParam('back')) {
@@ -149,7 +149,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
             } catch (Exception $e) {
                 Mage::logException($e);
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was a problem saving the wallet.')
+                    Mage::helper('selectbiz_payoh')->__('There was a problem saving the wallet.')
                 );
                 Mage::getSingleton('adminhtml/session')->setWalletData($data);
                 $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
@@ -157,7 +157,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
             }
         }
         Mage::getSingleton('adminhtml/session')->addError(
-            Mage::helper('sirateck_lemonway')->__('Unable to find wallet to save.')
+            Mage::helper('selectbiz_payoh')->__('Unable to find wallet to save.')
         );
         $this->_redirect('*/*/');
     }
@@ -173,10 +173,10 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
     {
         if ( $this->getRequest()->getParam('id') > 0) {
             try {
-                $wallet = Mage::getModel('sirateck_lemonway/wallet');
+                $wallet = Mage::getModel('selectbiz_payoh/wallet');
                 $wallet->setId($this->getRequest()->getParam('id'))->delete();
                 Mage::getSingleton('adminhtml/session')->addSuccess(
-                    Mage::helper('sirateck_lemonway')->__('Wallet was successfully deleted.')
+                    Mage::helper('selectbiz_payoh')->__('Wallet was successfully deleted.')
                 );
                 $this->_redirect('*/*/');
                 return;
@@ -185,7 +185,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error deleting wallet.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error deleting wallet.')
                 );
                 $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
                 Mage::logException($e);
@@ -193,7 +193,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
             }
         }
         Mage::getSingleton('adminhtml/session')->addError(
-            Mage::helper('sirateck_lemonway')->__('Could not find wallet to delete.')
+            Mage::helper('selectbiz_payoh')->__('Could not find wallet to delete.')
         );
         $this->_redirect('*/*/');
     }
@@ -210,22 +210,22 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets to delete.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets to delete.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                    $wallet = Mage::getModel('sirateck_lemonway/wallet');
+                    $wallet = Mage::getModel('selectbiz_payoh/wallet');
                     $wallet->setId($walletId)->delete();
                 }
                 Mage::getSingleton('adminhtml/session')->addSuccess(
-                    Mage::helper('sirateck_lemonway')->__('Total of %d wallets were successfully deleted.', count($walletIds))
+                    Mage::helper('selectbiz_payoh')->__('Total of %d wallets were successfully deleted.', count($walletIds))
                 );
             } catch (Mage_Core_Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error deleting wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error deleting wallets.')
                 );
                 Mage::logException($e);
             }
@@ -245,12 +245,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                             ->setStatus($this->getRequest()->getParam('status'))
                             ->setIsMassupdate(true)
                             ->save();
@@ -262,7 +262,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -282,12 +282,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setIsAdmin($this->getRequest()->getParam('flag_is_admin'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -299,7 +299,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -319,12 +319,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setBillingAddressCountry($this->getRequest()->getParam('flag_billing_address_country'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -336,7 +336,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -356,12 +356,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setIsCompany($this->getRequest()->getParam('flag_is_company'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -373,7 +373,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -393,12 +393,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setIsDebtor($this->getRequest()->getParam('flag_is_debtor'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -410,7 +410,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -430,12 +430,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setCustomerNationality($this->getRequest()->getParam('flag_customer_nationality'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -447,7 +447,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -467,12 +467,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setCustomerBirthCountry($this->getRequest()->getParam('flag_customer_birth_country'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -484,7 +484,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -504,12 +504,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setPayerOrBeneficiary($this->getRequest()->getParam('flag_payer_or_beneficiary'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -521,7 +521,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -541,12 +541,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setIsOnetimeCustomer($this->getRequest()->getParam('flag_is_onetime_customer'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -558,7 +558,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -578,12 +578,12 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
         $walletIds = $this->getRequest()->getParam('wallet');
         if (!is_array($walletIds)) {
             Mage::getSingleton('adminhtml/session')->addError(
-                Mage::helper('sirateck_lemonway')->__('Please select wallets.')
+                Mage::helper('selectbiz_payoh')->__('Please select wallets.')
             );
         } else {
             try {
                 foreach ($walletIds as $walletId) {
-                $wallet = Mage::getSingleton('sirateck_lemonway/wallet')->load($walletId)
+                $wallet = Mage::getSingleton('selectbiz_payoh/wallet')->load($walletId)
                     ->setIsDefault($this->getRequest()->getParam('flag_is_default'))
                     ->setIsMassupdate(true)
                     ->save();
@@ -595,7 +595,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
                 Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
             } catch (Exception $e) {
                 Mage::getSingleton('adminhtml/session')->addError(
-                    Mage::helper('sirateck_lemonway')->__('There was an error updating wallets.')
+                    Mage::helper('selectbiz_payoh')->__('There was an error updating wallets.')
                 );
                 Mage::logException($e);
             }
@@ -613,7 +613,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
     public function exportCsvAction()
     {
         $fileName   = 'wallet.csv';
-        $content    = $this->getLayout()->createBlock('sirateck_lemonway/adminhtml_wallet_grid')
+        $content    = $this->getLayout()->createBlock('selectbiz_payoh/adminhtml_wallet_grid')
             ->getCsv();
         $this->_prepareDownloadResponse($fileName, $content);
     }
@@ -628,7 +628,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
     public function exportExcelAction()
     {
         $fileName   = 'wallet.xls';
-        $content    = $this->getLayout()->createBlock('sirateck_lemonway/adminhtml_wallet_grid')
+        $content    = $this->getLayout()->createBlock('selectbiz_payoh/adminhtml_wallet_grid')
             ->getExcelFile();
         $this->_prepareDownloadResponse($fileName, $content);
     }
@@ -643,7 +643,7 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
     public function exportXmlAction()
     {
         $fileName   = 'wallet.xml';
-        $content    = $this->getLayout()->createBlock('sirateck_lemonway/adminhtml_wallet_grid')
+        $content    = $this->getLayout()->createBlock('selectbiz_payoh/adminhtml_wallet_grid')
             ->getXml();
         $this->_prepareDownloadResponse($fileName, $content);
     }
@@ -657,6 +657,6 @@ class Sirateck_Lemonway_Adminhtml_Lemonway_WalletController extends Sirateck_Lem
      */
     protected function _isAllowed()
     {
-        return Mage::getSingleton('admin/session')->isAllowed('sales/sirateck_lemonway/wallet');
+        return Mage::getSingleton('admin/session')->isAllowed('sales/selectbiz_payoh/wallet');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Sirateck_Lemonway extension
+ * Selectbiz_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -9,19 +9,19 @@
  * It is also available through the world-wide-web at this URL:
  * http://opensource.org/licenses/mit-license.php
  * 
- * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @category       Selectbiz
+ * @package        Selectbiz_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
  * Wallet admin grid block
  *
- * @category    Sirateck
- * @package     Sirateck_Lemonway
+ * @category    Selectbiz
+ * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block_Widget_Grid
+class Selectbiz_Payoh_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block_Widget_Grid
 {
     /**
      * constructor
@@ -43,12 +43,12 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
      * prepare collection
      *
      * @access protected
-     * @return Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid
+     * @return Selectbiz_Payoh_Block_Adminhtml_Wallet_Grid
      * @author Kassim Belghait kassim@sirateck.com
      */
     protected function _prepareCollection()
     {
-        $collection = Mage::getModel('sirateck_lemonway/wallet')
+        $collection = Mage::getModel('selectbiz_payoh/wallet')
             ->getCollection();
         
         $this->setCollection($collection);
@@ -59,7 +59,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
      * prepare grid collection
      *
      * @access protected
-     * @return Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid
+     * @return Selectbiz_Payoh_Block_Adminhtml_Wallet_Grid
      * @author Kassim Belghait kassim@sirateck.com
      */
     protected function _prepareColumns()
@@ -67,7 +67,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'entity_id',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Id'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Id'),
                 'index'  => 'entity_id',
                 'type'   => 'number'
             )
@@ -75,21 +75,21 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'wallet_id',
             array(
-                'header'    => Mage::helper('sirateck_lemonway')->__('Wallet ID'),
+                'header'    => Mage::helper('selectbiz_payoh')->__('Wallet ID'),
                 'align'     => 'left',
                 'index'     => 'wallet_id',
             )
         );
         
        /* $options = array();
-        foreach (Sirateck_Lemonway_Model_Wallet::$statuesLabel as $key=>$label){
-        	$options[$key] = Mage::helper('sirateck_lemonway')->__($label);
+        foreach (Selectbiz_Payoh_Model_Wallet::$statuesLabel as $key=>$label){
+        	$options[$key] = Mage::helper('selectbiz_payoh')->__($label);
         }
         
         $this->addColumn(
             'status',
             array(
-                'header'  => Mage::helper('sirateck_lemonway')->__('Status'),
+                'header'  => Mage::helper('selectbiz_payoh')->__('Status'),
                 'index'   => 'status',
                 'type'    => 'options',
                 'options' => $options
@@ -98,7 +98,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'lw_id',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Lemonway ID'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Lemonway ID'),
                 'index'  => 'lw_id',
                 'type'=> 'text',
 
@@ -107,7 +107,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_id',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Customer ID'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Customer ID'),
                 'index'  => 'customer_id',
                 'type'=> 'number',
 
@@ -116,12 +116,12 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'is_admin',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Is Admin'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Is Admin'),
                 'index'  => 'is_admin',
                 'type'    => 'options',
                     'options'    => array(
-                    '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                    '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                    '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                    '0' => Mage::helper('selectbiz_payoh')->__('No'),
                 )
 
             )
@@ -129,7 +129,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_email',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Email'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Email'),
                 'index'  => 'customer_email',
                 'type'=> 'text',
 
@@ -138,7 +138,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
        /*  $this->addColumn(
             'customer_prefix',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Prefix'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Prefix'),
                 'index'  => 'customer_prefix',
                 'type'=> 'text',
 
@@ -147,7 +147,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_firstname',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Firstname'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Firstname'),
                 'index'  => 'customer_firstname',
                 'type'=> 'text',
 
@@ -156,7 +156,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_lastname',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Lastname'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Lastname'),
                 'index'  => 'customer_lastname',
                 'type'=> 'text',
 
@@ -165,7 +165,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'billing_address_street',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Street'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Street'),
                 'index'  => 'billing_address_street',
                 'type'=> 'text',
 
@@ -174,7 +174,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'billing_address_postcode',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Postcode'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Postcode'),
                 'index'  => 'billing_address_postcode',
                 'type'=> 'text',
 
@@ -183,7 +183,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'billing_address_city',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('City'),
+                'header' => Mage::helper('selectbiz_payoh')->__('City'),
                 'index'  => 'billing_address_city',
                 'type'=> 'text',
 
@@ -192,7 +192,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'billing_address_country',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Country'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Country'),
                 'index'  => 'billing_address_country',
                 'type'=> 'country',
 
@@ -201,7 +201,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'billing_address_phone',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Phone Number'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Phone Number'),
                 'index'  => 'billing_address_phone',
                 'type'=> 'text',
 
@@ -210,7 +210,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'billing_address_mobile',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Mobile Number'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Mobile Number'),
                 'index'  => 'billing_address_mobile',
                 'type'=> 'text',
 
@@ -219,7 +219,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_dob',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Dob'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Dob'),
                 'index'  => 'customer_dob',
                 'type'=> 'date',
 
@@ -228,12 +228,12 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'is_company',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Is company'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Is company'),
                 'index'  => 'is_company',
                 'type'    => 'options',
                     'options'    => array(
-                    '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                    '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                    '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                    '0' => Mage::helper('selectbiz_payoh')->__('No'),
                 )
 
             )
@@ -241,7 +241,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'company_name',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Company name'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Company name'),
                 'index'  => 'company_name',
                 'type'=> 'text',
 
@@ -250,7 +250,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'company_website',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Company website'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Company website'),
                 'index'  => 'company_website',
                 'type'=> 'text',
 
@@ -259,7 +259,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'company_id_number',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Company ID number'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Company ID number'),
                 'index'  => 'company_id_number',
                 'type'=> 'text',
 
@@ -268,12 +268,12 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'is_debtor',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Is debtor'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Is debtor'),
                 'index'  => 'is_debtor',
                 'type'    => 'options',
                     'options'    => array(
-                    '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                    '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                    '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                    '0' => Mage::helper('selectbiz_payoh')->__('No'),
                 )
 
             )
@@ -281,7 +281,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_nationality',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Nationality'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Nationality'),
                 'index'  => 'customer_nationality',
                 'type'=> 'country',
 
@@ -290,7 +290,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_birth_city',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('City of Birth'),
+                'header' => Mage::helper('selectbiz_payoh')->__('City of Birth'),
                 'index'  => 'customer_birth_city',
                 'type'=> 'text',
 
@@ -299,7 +299,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'customer_birth_country',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Birth country'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Birth country'),
                 'index'  => 'customer_birth_country',
                 'type'=> 'country',
 
@@ -308,11 +308,11 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'payer_or_beneficiary',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Payer or beneficiary'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Payer or beneficiary'),
                 'index'  => 'payer_or_beneficiary',
                 'type'  => 'options',
-                'options' => Mage::helper('sirateck_lemonway')->convertOptions(
-                    Mage::getModel('sirateck_lemonway/wallet_attribute_source_payerorbeneficiary')->getAllOptions(false)
+                'options' => Mage::helper('selectbiz_payoh')->convertOptions(
+                    Mage::getModel('selectbiz_payoh/wallet_attribute_source_payerorbeneficiary')->getAllOptions(false)
                 )
 
             )
@@ -320,12 +320,12 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'is_onetime_customer',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Is One time customer'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Is One time customer'),
                 'index'  => 'is_onetime_customer',
                 'type'    => 'options',
                     'options'    => array(
-                    '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                    '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                    '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                    '0' => Mage::helper('selectbiz_payoh')->__('No'),
                 )
 
             )
@@ -333,12 +333,12 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'is_default',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Is default'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Is default'),
                 'index'  => 'is_default',
                 'type'    => 'options',
                     'options'    => array(
-                    '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                    '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                    '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                    '0' => Mage::helper('selectbiz_payoh')->__('No'),
                 )
 
             )
@@ -346,7 +346,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'created_at',
             array(
-                'header' => Mage::helper('sirateck_lemonway')->__('Created at'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Created at'),
                 'index'  => 'created_at',
                 'width'  => '120px',
                 'type'   => 'datetime',
@@ -355,7 +355,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'updated_at',
             array(
-                'header'    => Mage::helper('sirateck_lemonway')->__('Updated at'),
+                'header'    => Mage::helper('selectbiz_payoh')->__('Updated at'),
                 'index'     => 'updated_at',
                 'width'     => '120px',
                 'type'      => 'datetime',
@@ -364,13 +364,13 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->addColumn(
             'action',
             array(
-                'header'  =>  Mage::helper('sirateck_lemonway')->__('Action'),
+                'header'  =>  Mage::helper('selectbiz_payoh')->__('Action'),
                 'width'   => '100',
                 'type'    => 'action',
                 'getter'  => 'getId',
                 'actions' => array(
                     array(
-                        'caption' => Mage::helper('sirateck_lemonway')->__('Edit'),
+                        'caption' => Mage::helper('selectbiz_payoh')->__('Edit'),
                         'url'     => array('base'=> '*/*/edit'),
                         'field'   => 'id'
                     )
@@ -380,9 +380,9 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
                 'sortable'  => false,
             )
         );
-        $this->addExportType('*/*/exportCsv', Mage::helper('sirateck_lemonway')->__('CSV'));
-        $this->addExportType('*/*/exportExcel', Mage::helper('sirateck_lemonway')->__('Excel'));
-        $this->addExportType('*/*/exportXml', Mage::helper('sirateck_lemonway')->__('XML'));
+        $this->addExportType('*/*/exportCsv', Mage::helper('selectbiz_payoh')->__('CSV'));
+        $this->addExportType('*/*/exportExcel', Mage::helper('selectbiz_payoh')->__('Excel'));
+        $this->addExportType('*/*/exportXml', Mage::helper('selectbiz_payoh')->__('XML'));
         return parent::_prepareColumns();
     }
 
@@ -390,7 +390,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
      * prepare mass action
      *
      * @access protected
-     * @return Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid
+     * @return Selectbiz_Payoh_Block_Adminhtml_Wallet_Grid
      * @author Kassim Belghait kassim@sirateck.com
      */
     protected function _prepareMassaction()
@@ -400,25 +400,25 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'delete',
             array(
-                'label'=> Mage::helper('sirateck_lemonway')->__('Delete'),
+                'label'=> Mage::helper('selectbiz_payoh')->__('Delete'),
                 'url'  => $this->getUrl('*/*/massDelete'),
-                'confirm'  => Mage::helper('sirateck_lemonway')->__('Are you sure?')
+                'confirm'  => Mage::helper('selectbiz_payoh')->__('Are you sure?')
             )
         );
         $this->getMassactionBlock()->addItem(
             'status',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change status'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change status'),
                 'url'        => $this->getUrl('*/*/massStatus', array('_current'=>true)),
                 'additional' => array(
                     'status' => array(
                         'name'   => 'status',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Status'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Status'),
                         'values' => array(
-                            '1' => Mage::helper('sirateck_lemonway')->__('Enabled'),
-                            '0' => Mage::helper('sirateck_lemonway')->__('Disabled'),
+                            '1' => Mage::helper('selectbiz_payoh')->__('Enabled'),
+                            '0' => Mage::helper('selectbiz_payoh')->__('Disabled'),
                         )
                     )
                 )
@@ -427,17 +427,17 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'is_admin',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Is Admin'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Is Admin'),
                 'url'        => $this->getUrl('*/*/massIsAdmin', array('_current'=>true)),
                 'additional' => array(
                     'flag_is_admin' => array(
                         'name'   => 'flag_is_admin',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Is Admin'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Is Admin'),
                         'values' => array(
-                                '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                                '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                                '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                                '0' => Mage::helper('selectbiz_payoh')->__('No'),
                             )
 
                     )
@@ -447,14 +447,14 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'billing_address_country',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Country'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Country'),
                 'url'        => $this->getUrl('*/*/massBillingAddressCountry', array('_current'=>true)),
                 'additional' => array(
                     'flag_billing_address_country' => array(
                         'name'   => 'flag_billing_address_country',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Country'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Country'),
                         'values' => Mage::getResourceModel('directory/country_collection')->toOptionArray()
 
                     )
@@ -464,17 +464,17 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'is_company',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Is company'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Is company'),
                 'url'        => $this->getUrl('*/*/massIsCompany', array('_current'=>true)),
                 'additional' => array(
                     'flag_is_company' => array(
                         'name'   => 'flag_is_company',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Is company'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Is company'),
                         'values' => array(
-                                '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                                '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                                '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                                '0' => Mage::helper('selectbiz_payoh')->__('No'),
                             )
 
                     )
@@ -484,17 +484,17 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'is_debtor',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Is debtor'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Is debtor'),
                 'url'        => $this->getUrl('*/*/massIsDebtor', array('_current'=>true)),
                 'additional' => array(
                     'flag_is_debtor' => array(
                         'name'   => 'flag_is_debtor',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Is debtor'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Is debtor'),
                         'values' => array(
-                                '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                                '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                                '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                                '0' => Mage::helper('selectbiz_payoh')->__('No'),
                             )
 
                     )
@@ -504,14 +504,14 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'customer_nationality',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Nationality'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Nationality'),
                 'url'        => $this->getUrl('*/*/massCustomerNationality', array('_current'=>true)),
                 'additional' => array(
                     'flag_customer_nationality' => array(
                         'name'   => 'flag_customer_nationality',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Nationality'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Nationality'),
                         'values' => Mage::getResourceModel('directory/country_collection')->toOptionArray()
 
                     )
@@ -521,14 +521,14 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'customer_birth_country',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Birth country'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Birth country'),
                 'url'        => $this->getUrl('*/*/massCustomerBirthCountry', array('_current'=>true)),
                 'additional' => array(
                     'flag_customer_birth_country' => array(
                         'name'   => 'flag_customer_birth_country',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Birth country'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Birth country'),
                         'values' => Mage::getResourceModel('directory/country_collection')->toOptionArray()
 
                     )
@@ -538,15 +538,15 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'payer_or_beneficiary',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Payer or beneficiary'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Payer or beneficiary'),
                 'url'        => $this->getUrl('*/*/massPayerOrBeneficiary', array('_current'=>true)),
                 'additional' => array(
                     'flag_payer_or_beneficiary' => array(
                         'name'   => 'flag_payer_or_beneficiary',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Payer or beneficiary'),
-                        'values' => Mage::getModel('sirateck_lemonway/wallet_attribute_source_payerorbeneficiary')
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Payer or beneficiary'),
+                        'values' => Mage::getModel('selectbiz_payoh/wallet_attribute_source_payerorbeneficiary')
                             ->getAllOptions(true),
 
                     )
@@ -556,17 +556,17 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'is_onetime_customer',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Is One time customer'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Is One time customer'),
                 'url'        => $this->getUrl('*/*/massIsOnetimeCustomer', array('_current'=>true)),
                 'additional' => array(
                     'flag_is_onetime_customer' => array(
                         'name'   => 'flag_is_onetime_customer',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Is One time customer'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Is One time customer'),
                         'values' => array(
-                                '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                                '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                                '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                                '0' => Mage::helper('selectbiz_payoh')->__('No'),
                             )
 
                     )
@@ -576,17 +576,17 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
         $this->getMassactionBlock()->addItem(
             'is_default',
             array(
-                'label'      => Mage::helper('sirateck_lemonway')->__('Change Is default'),
+                'label'      => Mage::helper('selectbiz_payoh')->__('Change Is default'),
                 'url'        => $this->getUrl('*/*/massIsDefault', array('_current'=>true)),
                 'additional' => array(
                     'flag_is_default' => array(
                         'name'   => 'flag_is_default',
                         'type'   => 'select',
                         'class'  => 'required-entry',
-                        'label'  => Mage::helper('sirateck_lemonway')->__('Is default'),
+                        'label'  => Mage::helper('selectbiz_payoh')->__('Is default'),
                         'values' => array(
-                                '1' => Mage::helper('sirateck_lemonway')->__('Yes'),
-                                '0' => Mage::helper('sirateck_lemonway')->__('No'),
+                                '1' => Mage::helper('selectbiz_payoh')->__('Yes'),
+                                '0' => Mage::helper('selectbiz_payoh')->__('No'),
                             )
 
                     )
@@ -600,7 +600,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
      * get the row url
      *
      * @access public
-     * @param Sirateck_Lemonway_Model_Wallet
+     * @param Selectbiz_Payoh_Model_Wallet
      * @return string
      * @author Kassim Belghait kassim@sirateck.com
      */
@@ -625,7 +625,7 @@ class Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block
      * after collection load
      *
      * @access protected
-     * @return Sirateck_Lemonway_Block_Adminhtml_Wallet_Grid
+     * @return Selectbiz_Payoh_Block_Adminhtml_Wallet_Grid
      * @author Kassim Belghait kassim@sirateck.com
      */
     protected function _afterLoadCollection()

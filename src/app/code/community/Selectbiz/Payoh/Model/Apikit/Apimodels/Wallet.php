@@ -10,7 +10,7 @@
  * @method array getIbans()
  * @method array getssdMandates()
  */
-class Sirateck_Lemonway_Model_Apikit_Apimodels_Wallet extends Varien_Object{
+class Selectbiz_Payoh_Model_Apikit_Apimodels_Wallet extends Varien_Object{
 	
 	function __construct($WALLETArr = array()) {
 		if(count($WALLETArr))
@@ -26,17 +26,17 @@ class Sirateck_Lemonway_Model_Apikit_Apimodels_Wallet extends Varien_Object{
 			$this->_data['kyc_docs'] = array();
 			if (isset($WALLET->DOCS))
 				foreach ($WALLET->DOCS->DOC as $DOC){
-					$this->_data['kyc_docs'][] = Mage::getModel('sirateck_lemonway/apikit_apimodels_kycDoc',array($DOC));//new KycDoc($DOC);
+					$this->_data['kyc_docs'][] = Mage::getModel('selectbiz_payoh/apikit_apimodels_kycDoc',array($DOC));//new KycDoc($DOC);
 				}
 			$this->_data['ibans'] = array();
 			if (isset($WALLET->IBANS))
 				foreach ($WALLET->IBANS->IBAN as $IBAN){
-					$this->_data['ibans'][] = Mage::getModel('sirateck_lemonway/apikit_apimodels_iban',array($IBAN));//new Iban($IBAN);
+					$this->_data['ibans'][] = Mage::getModel('selectbiz_payoh/apikit_apimodels_iban',array($IBAN));//new Iban($IBAN);
 				}
 			$this->_data['ssd_mandates'] = array();
 			if (isset($WALLET->SDDMANDATES))
 				foreach ($WALLET->SDDMANDATES->SDDMANDATE as $SDDMANDATE){
-					$this->_data['ssd_mandates'][] = Mage::getModel('sirateck_lemonway/apikit_apimodels_ssdMandate',array($SDDMANDATE));//new SddMandate($SDDMANDATE);
+					$this->_data['ssd_mandates'][] = Mage::getModel('selectbiz_payoh/apikit_apimodels_ssdMandate',array($SDDMANDATE));//new SddMandate($SDDMANDATE);
 				}
 		}
 	}
