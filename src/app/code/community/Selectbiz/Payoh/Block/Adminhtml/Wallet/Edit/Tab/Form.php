@@ -45,7 +45,7 @@ class Selectbiz_Payoh_Block_Adminhtml_Wallet_Edit_Tab_Form extends Mage_Adminhtm
             'lw_id',
             'text',
             array(
-                'label' => Mage::helper('selectbiz_payoh')->__('Lemonway ID'),
+                'label' => Mage::helper('selectbiz_payoh')->__('Payoh ID'),
                 'name'  => 'lw_id',
             'required'  => true,
             'class' => 'required-entry',

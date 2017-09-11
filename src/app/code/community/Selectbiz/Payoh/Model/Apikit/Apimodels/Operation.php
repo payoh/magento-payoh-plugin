@@ -1,7 +1,7 @@
 <?php
 /**
  * @method string getType() {p2p, moneyin, moneyout}
- * @method int getHpayId() id lemonway
+ * @method int getHpayId() id payoh
  * @method string getLabelCode() IBAN or Card number
  * @method string getSenderWallet()  sender wallet id
  * @method string getReceiverWallet() receiver wallet id

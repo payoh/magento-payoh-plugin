@@ -15,7 +15,7 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
- * Lemonway default helper
+ * Payoh default helper
  *
  * @category    Selectbiz
  * @package     Selectbiz_Payoh

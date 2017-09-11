@@ -35,7 +35,7 @@ class Selectbiz_Payoh_Adminhtml_Payoh_MoneyoutController extends Selectbiz_Payoh
     public function payAction()
     {
         $this->loadLayout();
-        $this->_title(Mage::helper('selectbiz_payoh')->__('Lemonway'))
+        $this->_title(Mage::helper('selectbiz_payoh')->__('Payoh'))
              ->_title(Mage::helper('selectbiz_payoh')->__('MoneyOut'));
         $this->renderLayout();
     }

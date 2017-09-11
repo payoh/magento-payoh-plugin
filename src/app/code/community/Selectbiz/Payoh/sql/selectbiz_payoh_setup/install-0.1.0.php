@@ -15,7 +15,7 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
- * Lemonway module install script
+ * Payoh module install script
  *
  * @category    Selectbiz
  * @package     Selectbiz_Payoh
@@ -41,7 +41,7 @@ $table = $this->getConnection()
         array(
             'nullable'  => false,
         ),
-        'Lemonway ID'
+        'Payoh ID'
     )
     ->addColumn(
         'customer_id',

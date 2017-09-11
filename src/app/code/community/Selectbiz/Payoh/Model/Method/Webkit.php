@@ -24,7 +24,7 @@
  class Selectbiz_Payoh_Model_Method_Webkit extends Mage_Payment_Model_Method_Abstract{
 
 
-    protected $_code  = 'lemonway_webkit';
+    protected $_code  = 'payoh_webkit';
     protected $_formBlockType = 'selectbiz_payoh/form_webkit';
     protected $_infoBlockType = 'selectbiz_payoh/info_webkit';
 
@@ -107,8 +107,8 @@
             $amountCom = $this->getOrder()->getBaseGrandTotal();
         }
         else{
-            $seller_totals = Mage::helper('lemonwaymkt')->getOrderCommissionDetails($this->getOrder());
-            if($seller_totals->getTotalSellerAmount() > 0 && !Mage::getStoreConfigFlag('selectbiz_payoh/lemonwaymkt/include_shipping')){
+            $seller_totals = Mage::helper('payohmkt')->getOrderCommissionDetails($this->getOrder());
+            if($seller_totals->getTotalSellerAmount() > 0 && !Mage::getStoreConfigFlag('selectbiz_payoh/payohmkt/include_shipping')){
                 $amountCom = $this->getOrder()->getBaseGrandTotal() - ($seller_totals->getTotalSellerAmount() + $seller_totals->getTotalCommision());
             }
         }*/

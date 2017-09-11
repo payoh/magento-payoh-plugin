@@ -49,7 +49,7 @@ class Selectbiz_Payoh_Model_Adminhtml_Search_Wallet extends Varien_Object
                 'name'        => $wallet->getWalletId(),
                 'description' => $wallet->getWalletId(),
                 'url' => Mage::helper('adminhtml')->getUrl(
-                    '*/lemonway_wallet/edit',
+                    '*/payoh_wallet/edit',
                     array('id'=>$wallet->getId())
                 ),
             );

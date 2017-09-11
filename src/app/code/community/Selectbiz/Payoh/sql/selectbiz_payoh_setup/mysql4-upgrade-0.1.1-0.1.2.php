@@ -15,7 +15,7 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
- * Lemonway module update script
+ * Payoh module update script
  *
  * @category    Selectbiz
  * @package     Selectbiz_Payoh

@@ -37,7 +37,7 @@ class Selectbiz_Payoh_Model_Config extends Varien_Object
 	const MODE_PROD = 'prod';
 	
 	
-	const BASE_CONFIG = 'selectbiz_payoh/lemonway_api/';
+	const BASE_CONFIG = 'selectbiz_payoh/payoh_api/';
 	
 	/**
 	 *  Return config var

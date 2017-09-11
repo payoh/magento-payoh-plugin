@@ -98,7 +98,7 @@ class Selectbiz_Payoh_Block_Adminhtml_Wallet_Grid extends Mage_Adminhtml_Block_W
         $this->addColumn(
             'lw_id',
             array(
-                'header' => Mage::helper('selectbiz_payoh')->__('Lemonway ID'),
+                'header' => Mage::helper('selectbiz_payoh')->__('Payoh ID'),
                 'index'  => 'lw_id',
                 'type'=> 'text',
 

@@ -244,13 +244,13 @@ class Selectbiz_Payoh_Model_Apikit_Kit{
                 $message =  "Bad Request : The server cannot or will not process the request due to something that is perceived to be a client error";
                 break;
             case 403:
-                $message =  "IP is not allowed to access Lemon Way's API, please contact support@lemonway.fr";
+                $message =  "IP is not allowed to access Lemon Way's API, please contact support@payoh.me";
                 break;
             case 404:
-                $message =  "Check that the access URLs are correct. If yes, please contact support@lemonway.fr";
+                $message =  "Check that the access URLs are correct. If yes, please contact support@payoh.me";
                 break;
             case 500:
-                $message =  "Lemon Way internal server error, please contact support@lemonway.fr";
+                $message =  "Lemon Way internal server error, please contact support@payoh.me";
                 break;
             default:
                 $message = "Code: {$returnCode} not processed!";

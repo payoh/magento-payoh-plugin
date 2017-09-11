@@ -27,7 +27,7 @@ class Selectbiz_Payoh_Block_Info_Webkit extends Mage_Payment_Block_Info
     protected function _construct()
     {
         parent::_construct();
-        $this->setTemplate('lemonway/info/webkit.phtml');
+        $this->setTemplate('payoh/info/webkit.phtml');
     }
     
     
