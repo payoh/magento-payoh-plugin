@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Sirateck_Lemonway extension
+ * Sirateck_Payoh extension
  * 
  * NOTICE OF LICENSE
  * 
@@ -11,54 +11,54 @@
  * http://opensource.org/licenses/mit-license.php
  * 
  * @category       Sirateck
- * @package        Sirateck_Lemonway
+ * @package        Sirateck_Payoh
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 --> 
 <layout>
-    <adminhtml_lemonway_wallet_index>
+    <adminhtml_payoh_wallet_index>
         <reference name="menu">
             <action method="setActive">
-                <menupath>sales/sirateck_lemonway/wallet</menupath>
+                <menupath>sales/selectbiz_payoh/wallet</menupath>
             </action>
         </reference>
         <reference name="content">
-            <block type="sirateck_lemonway/adminhtml_wallet" name="wallet" />
+            <block type="selectbiz_payoh/adminhtml_wallet" name="wallet" />
 
         </reference>
-    </adminhtml_lemonway_wallet_index>
-    <adminhtml_lemonway_wallet_grid>
+    </adminhtml_payoh_wallet_index>
+    <adminhtml_payoh_wallet_grid>
         <block type="core/text_list" name="root" output="toHtml">
-            <block type="sirateck_lemonway/adminhtml_wallet_grid" name="wallet_grid"/>
+            <block type="selectbiz_payoh/adminhtml_wallet_grid" name="wallet_grid"/>
         </block>
-    </adminhtml_lemonway_wallet_grid>
+    </adminhtml_payoh_wallet_grid>
     <!-- Wallet add/edit action -->
-    <adminhtml_lemonway_wallet_edit>
+    <adminhtml_payoh_wallet_edit>
         <update handle="editor"/>
         <reference name="menu">
             <action method="setActive">
-                <menupath>sales/sirateck_lemonway/wallet</menupath>
+                <menupath>sales/selectbiz_payoh/wallet</menupath>
             </action>
         </reference>
         <reference name="content">
-            <block type="sirateck_lemonway/adminhtml_wallet_edit" name="wallet_edit"></block>
+            <block type="selectbiz_payoh/adminhtml_wallet_edit" name="wallet_edit"></block>
         </reference>
         <reference name="left">
-            <block type="sirateck_lemonway/adminhtml_wallet_edit_tabs" name="wallet_tabs"></block>
+            <block type="selectbiz_payoh/adminhtml_wallet_edit_tabs" name="wallet_tabs"></block>
         </reference>
-    </adminhtml_lemonway_wallet_edit>
+    </adminhtml_payoh_wallet_edit>
     
-    <adminhtml_lemonway_moneyout_pay>
+    <adminhtml_payoh_moneyout_pay>
         <reference name="menu">
             <action method="setActive">
-                <menupath>sales/sirateck_lemonway/moneyout</menupath>
+                <menupath>sales/selectbiz_payoh/moneyout</menupath>
             </action>
         </reference>
         <reference name="content">
-            <block type="sirateck_lemonway/adminhtml_moneyout" name="moneyout" template="lemonway/moneyout.phtml" />
+            <block type="selectbiz_payoh/adminhtml_moneyout" name="moneyout" template="payoh/moneyout.phtml" />
 
         </reference>
-    </adminhtml_lemonway_moneyout_pay>
+    </adminhtml_payoh_moneyout_pay>
 
 </layout>

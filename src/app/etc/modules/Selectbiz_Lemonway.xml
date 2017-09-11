@@ -18,12 +18,12 @@
 -->
 <config>
     <modules>
-        <Sirateck_Lemonway>
+        <Selectbiz_Payoh>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
                 <Mage_Core />
              </depends>
-        </Sirateck_Lemonway>
+        </Selectbiz_Payoh>
     </modules>
 </config>
