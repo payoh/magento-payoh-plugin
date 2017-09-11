@@ -1,9 +1,9 @@
 <?php
 
 return array(
-  'extension_name'         => 'Sirateck_Lemonway',
+  'extension_name'         => 'Selectbiz_Payoh',
   'summary'                => 'INTEGRATE YOUR TECHNOLOGY, MAKE THE MOST OF OUR SERVICES!',
-  'description'            => 'Through its API, Lemon Way offers you state-of-the-art payment technology. Beyond their technological expertise, Lemon Way also offers a multitude of complementary regulation and management services.',
+  'description'            => 'Through its API, Payoh offers you state-of-the-art payment technology. Beyond their technological expertise, Payoh also offers a multitude of complementary regulation and management services.',
   'notes'                  => '',
   'extension_version'      => '1.2.0',
   'skip_version_compare'   => false,
@@ -14,7 +14,7 @@ return array(
   'channel'                => 'community',
 
   'author_name'            => 'Kassim Belghait',
-  'author_user'            => 'Sirateck',
+  'author_user'            => 'Selectbiz',
   'author_email'           => 'kassim@sirateck.com',
 
   'base_dir'               => __DIR__.'/dist',
