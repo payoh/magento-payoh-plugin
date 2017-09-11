@@ -21,7 +21,7 @@
  * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Selectbiz_Payoh_Controller_Adminhtml_Lemonway extends Mage_Adminhtml_Controller_Action
+class Selectbiz_Payoh_Controller_Adminhtml_Payoh extends Mage_Adminhtml_Controller_Action
 {
     /**
      * upload file and get the uploaded name

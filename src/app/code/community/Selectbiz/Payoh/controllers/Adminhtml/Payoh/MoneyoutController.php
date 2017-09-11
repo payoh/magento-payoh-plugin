@@ -21,7 +21,7 @@
  * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Selectbiz_Payoh_Adminhtml_Lemonway_MoneyoutController extends Selectbiz_Payoh_Controller_Adminhtml_Lemonway
+class Selectbiz_Payoh_Adminhtml_Payoh_MoneyoutController extends Selectbiz_Payoh_Controller_Adminhtml_Payoh
 {
 
 

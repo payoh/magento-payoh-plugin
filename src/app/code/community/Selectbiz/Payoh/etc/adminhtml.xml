@@ -26,7 +26,7 @@
                             <config>
                                 <children>
                                     <selectbiz_payoh translate="title" module="selectbiz_payoh">
-                                        <title>Lemonway</title>
+                                        <title>Payoh</title>
                                     </selectbiz_payoh>
                                 </children>
                             </config>
@@ -53,12 +53,12 @@
         <sales>
             <children>
                 <selectbiz_payoh translate="title" module="selectbiz_payoh">
-                    <title>Lemonway</title>
+                    <title>Payoh</title>
                     <sort_order>5</sort_order>
                     <children>
                         <moneyout translate="title" module="selectbiz_payoh">
                             <title>MoneyOut</title>
-                            <action>adminhtml/lemonway_moneyout/pay</action>
+                            <action>adminhtml/payoh_moneyout/pay</action>
                             <sort_order>300</sort_order>
                         </moneyout>
                     </children>

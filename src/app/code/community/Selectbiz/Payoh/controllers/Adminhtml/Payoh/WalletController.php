@@ -21,7 +21,7 @@
  * @package     Selectbiz_Payoh
  * @author Kassim Belghait kassim@sirateck.com
  */
-class Selectbiz_Payoh_Adminhtml_Lemonway_WalletController extends Selectbiz_Payoh_Controller_Adminhtml_Lemonway
+class Selectbiz_Payoh_Adminhtml_Payoh_WalletController extends Selectbiz_Payoh_Controller_Adminhtml_Payoh
 {
     /**
      * init the wallet
